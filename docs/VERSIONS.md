@@ -51,7 +51,7 @@ Original UCI files, as bound in the accepted Adult preparation:
 
 ## Publication interface, 4 November 2026
 
-Davut Emre (detasar), *Editing Neural Networks with Language Models*. The main
+Davut Emre Taşar (detasar), *Editing Neural Networks with Language Models*. The main
 LM version is the completed corrected-float32-prompt v2. Historical v1 is retained
 for method history; the same exposed panels are not an independent replication.
 The snapshot export itself performs no model calls.

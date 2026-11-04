@@ -1,30 +1,37 @@
-# Publication delivery index
+# Publication delivery
 
-Editing Neural Networks with Language Models · Davut Emre (detasar) · 4 November 2026.
+Editing Neural Networks with Language Models · Davut Emre Taşar · BBVA AI Innovation · 4 November 2026.
 
-| Material | Entry |
+The [public landing page](https://detasar.github.io/llm-weight-editing-study/)
+connects one accepted continuous presentation with its reader report. All files
+below belong to the same frozen scientific snapshot.
+
+| Material | Current artifact |
 | --- | --- |
-| Overview and exact frozen result tables | [README](../README.md) |
-| Interactive 22-scene deck | [Pages deck](https://detasar.github.io/llm-weight-editing-study/) |
-| 16-page visual report + technical appendix | [Pages report](https://detasar.github.io/llm-weight-editing-study/?view=report) |
-| Local report / deck entry points | [Report](../report/index.html) · [Presentation](../presentation/index.html) |
-| PDF backups: 22 report pages / 28 deck pages | [Report PDF](../report/report.pdf) · [Deck PDF](../presentation/presentation.pdf) |
-| Offline presentation package | [ZIP](../presentation/weight-editing-offline.zip) |
-| Scientific figure exports | [Figures](../report/figures/) |
-| Talk: 35 minutes + 5 Q&A | [Speaker notes](SPEAKER_NOTES.md) |
-| One-page research summary | [Knowledge RIP](KNOWLEDGE_RIP.md) |
-| Scientific provenance | [Manifest](../data/manifest.json) · [Methods](METHODS.md) · [Scorer](SCORER.md) · [Versions](VERSIONS.md) |
-| Saved-data and explicit native execution | [Reproduction](REPRODUCE.md) |
-| Numerical, browser and visual checks | [Validation](VALIDATION.md) |
-| Citation and terms | [Citation](../CITATION.cff) · [Code](../LICENSE) · [Content](../CONTENT_LICENSE) |
+| 45-minute presentation, 33 chapters | [START_PRESENTATION.html](../publication/2026-11-04/START_PRESENTATION.html) |
+| 26-page reader report | [PDF](../publication/2026-11-04/RESEARCH_REPORT.pdf) · [HTML](../publication/2026-11-04/RESEARCH_REPORT.html) |
+| Presentation backup, 59 captured explanatory states | [PDF](../publication/2026-11-04/PRESENTATION_BACKUP.pdf) |
+| Complete offline delivery | [ZIP](../publication/2026-11-04/BBVA_RESEARCH_OFFLINE.zip) |
+| Instructions and bundled licenses | [README](../publication/2026-11-04/README.txt) · [Notices](../publication/2026-11-04/THIRD_PARTY_NOTICES.txt) |
+| Delivered file sizes and SHA-256 hashes | [Artifact manifest](../publication/2026-11-04/artifact-manifest.json) |
+| Exact scientific evidence | [Manifest](../data/manifest.json) · [Methods](METHODS.md) · [Scorer](SCORER.md) · [Versions](VERSIONS.md) |
+| Saved-data verification and explicit execution | [Reproduction](REPRODUCE.md) |
+| Summary and sources | [Knowledge RIP](KNOWLEDGE_RIP.md) · [Repository](https://github.com/detasar/llm-weight-editing-study) |
 
-For the talk, download the ZIP in advance, unzip it, enter its `offline` directory
-and run `python3 launch.py`. It opens a local browser with all runtime assets,
-fonts and formulas included. Use the arrow keys or scene menu to navigate;
-Presenter opens notes and the talk timer. The two PDFs are the presentation
-backup. Python 3 and a browser are sufficient; no package installation, model,
-API or internet connection is required at presentation time.
+Download the ZIP, unzip the complete package, and **double-click
+START_PRESENTATION.html**. Click Start presentation. Space pauses/resumes;
+Left/Right moves between explanatory cues. Chapter navigation, reduced motion
+and a 2D view are optional. All fonts, styles and images are bundled; playback
+needs no server, Python installation, internet connection, provider or API key.
+The presentation has synchronized written explanation, rather than a recorded
+voice track. Open RESEARCH_REPORT.pdf or RESEARCH_REPORT.html for the reader
+edition, and PRESENTATION_BACKUP.pdf for captured explanatory states.
 
-The report has 16 main pages and six technical appendix pages. The deck has 22
-main scenes and six appendix scenes. The speaker notes allocate 35 minutes to
-the main narrative, followed by five minutes of questions.
+The current files live only under `publication/2026-11-04/`; the older generated
+report and deck are retired from current navigation. Numerical figure sources
+remain in `report/figures/`. Build preparation verifies every delivered file
+against the artifact manifest and copies this version to the Pages output.
+The ZIP is a single package; the loose versioned files support online reading.
+
+The build and content checks establish packaging invariants. Independent review,
+coordinator visual acceptance and public readback are separate delivery gates.

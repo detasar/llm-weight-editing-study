@@ -1,0 +1,24 @@
+{
+  "weight-space-hero.png": {
+    "kind": "conceptual illustration",
+    "created_with": "OpenAI image generation",
+    "data_representation": false,
+    "credit": "Davut Emre Taşar",
+    "license": "CC BY 4.0",
+    "sha256": "0d9451c79df292e2d2cea397f9bc000b421ec96e002731ed408d4697cb33dc3b"
+  },
+  "reference-article-title.png": {
+    "kind": "cropped reference article opening",
+    "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+    "authors": [
+      "Rikiya Takehi",
+      "Jayden Teoh",
+      "Alex Zhang",
+      "Omar Khattab"
+    ],
+    "date": "2026-11-02",
+    "source": "https://rikiyat.github.io/blog/weight-space-programming/",
+    "rights": "Third-party title-page excerpt for scholarly reference; excluded from the study artwork license.",
+    "sha256": "33fdba0411b52d1504c212fcb5f901bffb54f51b4cb18f1c60d74a4f54731393"
+  }
+}

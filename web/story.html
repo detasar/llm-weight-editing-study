@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Editing Neural Networks with Language Models — Davut Emre Taşar, BBVA AI Innovation. A continuous 45-minute research presentation."><title>Editing Neural Networks with Language Models · BBVA AI Innovation</title></head>
+<body>
+<main id="presentation" aria-label="45-minute continuous research presentation">
+ <img id="hero" alt="Conceptual glass neural architecture, illustrative artwork">
+ <canvas id="glass" aria-hidden="true"></canvas>
+ <div id="anchors" aria-hidden="true"></div>
+ <header><div class="mast"><span>BBVA AI Innovation · Davut Emre Taşar</span><span id="chapter-position">01 / 33</span></div><h1></h1><p class="cue-heading"></p></header>
+ <div id="cue-dots" aria-hidden="true"></div><div id="figure"></div>
+ <p id="subtitles" aria-live="off"></p><p id="caption"></p>
+</main>
+<nav aria-label="Presentation controls">
+ <button id="toggle">Start presentation</button><button id="replay" aria-label="Replay from beginning">Replay</button>
+ <input id="seek" type="range" min="0" max="2700" step="0.1" value="0" aria-label="Presentation time in seconds"><output id="time" for="seek">00:00 / 45:00</output>
+ <select id="chapters" aria-label="Optional chapter navigation"></select>
+ <label><input type="checkbox" id="subtitles-on" checked>Subtitles</label><label><input type="checkbox" id="reduced">Reduced motion</label>
+ <label><input type="checkbox" id="flat">2D view</label><button id="evidence-button">Evidence</button><button id="fullscreen">Fullscreen</button>
+ <span id="mode"></span><span id="error" role="status"></span>
+</nav>
+<dialog id="evidence-dialog" aria-label="Sources and frozen evidence"><button id="close-evidence" aria-label="Close evidence">Close</button><div id="evidence-content"></div></dialog>
+<script type="module" src="./src/story/main.mjs"></script>
+</body></html>

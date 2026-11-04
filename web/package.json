@@ -19,9 +19,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "node prepare.mjs && tsc --noEmit && vite build",
-    "test": "node ../scripts/browser_qa.mjs --test",
-    "qa": "node ../scripts/browser_qa.mjs",
-    "export:pdf": "node ../scripts/export_visuals.mjs",
-    "package:offline": "node ../scripts/export_visuals.mjs --package"
+    "build:story": "node build-story.mjs",
+    "test:story": "node --test tests/story.test.mjs",
+    "test:delivery": "node --test tests/delivery.test.mjs"
   }
 }

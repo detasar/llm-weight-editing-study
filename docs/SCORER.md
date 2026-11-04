@@ -1,6 +1,6 @@
 # Canonical scoring conventions
 
-Editing Neural Networks with Language Models · Davut Emre (detasar) · 4 November 2026.
+Editing Neural Networks with Language Models · Davut Emre Taşar (detasar) · 4 November 2026.
 
 The source of truth is `src/ws_lab/lm_scoring.py`, with saved-row aggregation in
 `src/ws_lab/saved_lm.py`. Task YAML identities and model/data revisions are in

@@ -3,7 +3,7 @@ Creative Commons Attribution 4.0 International (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
 
-Attribute "Editing Neural Networks with Language Models, Davut Emre (detasar), 4 November 2026" and identify modifications. Code is MIT (see LICENSE).
+Attribute "Editing Neural Networks with Language Models, Davut Emre Taşar (detasar), 4 November 2026" and identify modifications. Code is MIT (see LICENSE).
 
 This grant covers only material we own. No third-party model weights or dataset
 binaries are bundled. Dataset/model terms remain with their rights holders:
@@ -19,3 +19,10 @@ binaries are bundled. Dataset/model terms remain with their rights holders:
   Consult the pinned model card and its Apache-2.0 license.
 - Canonical harness: https://github.com/EleutherAI/lm-evaluation-harness
   Its upstream MIT license applies; installed separately at the documented commit.
+
+The reference article title-page excerpt in the presentation/report remains
+copyright its original authors Rikiya Takehi, Jayden Teoh, Alex Zhang and Omar
+Khattab. It is attributed to “Sparks of Weight-Space Programming”
+(2 November 2026), https://rikiyat.github.io/blog/weight-space-programming/ ,
+and is excluded from this CC BY 4.0 grant. Bundled software and fonts retain
+their respective licenses; see the publication's THIRD_PARTY_NOTICES.txt.

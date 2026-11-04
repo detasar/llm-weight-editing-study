@@ -1,0 +1,49 @@
+@font-face{font-family:Manrope;src:url('../../node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('../../node_modules/@fontsource/manrope/files/manrope-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Serif;src:url('../../node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff2') format('woff2');font-display:swap}
+:root{color-scheme:dark;--ink:#f1eee5;--bg:#000000;--cyan:#7cd4d8;--amber:#edb85f;--violet:#b3a2df;--muted:#a3afb7;--rule:#29343c;--dark:#243039;font-family:Manrope,sans-serif;background:var(--bg);color:var(--ink)}
+*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,select{background:transparent;color:inherit;border:1px solid var(--rule);padding:9px 13px;cursor:pointer}button:hover,select:hover{border-color:var(--amber)}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:4px}a{color:var(--cyan)}
+#presentation{position:relative;height:calc(100dvh - 95px);min-height:600px;max-width:2100px;margin:auto;isolation:isolate;overflow:hidden;background:var(--bg);color:var(--ink)}
+#presentation.paper{--ink:#1a2429;--bg:#f3f0e8;--muted:#53616a;--cyan:#26777b;--amber:#925c14;--violet:#76639e;--rule:#c8cdc9;--dark:#b7bdbd;color-scheme:light}
+header{position:absolute;z-index:3;left:5%;right:5%;top:4%}.mast{display:flex;justify-content:space-between;gap:20px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}h1{font-weight:400;font-size:clamp(28px,3.1vw,56px);letter-spacing:-.045em;line-height:1.12;margin:20px 0 8px;max-width:90%}.cue-heading{font-size:clamp(17px,1.55vw,26px);color:var(--amber);margin:0}
+#glass{position:absolute;left:2%;top:21%;width:96%;height:57%;z-index:0;pointer-events:none}#figure{position:absolute;inset:24% 5% 20%;z-index:1}#figure svg{width:100%;height:100%;overflow:visible;font-family:Manrope,sans-serif}#figure .hero-copy{position:absolute;left:0;top:8%;width:36%;z-index:2}h2{font-weight:400;letter-spacing:-.035em} .hero-copy h2{font:400 clamp(32px,4vw,74px)/1.1 Serif,serif;margin:15px 0}.hero-copy p{color:var(--muted);font-size:20px;line-height:1.6}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted)}
+#hero{position:absolute;top:13%;right:-3%;width:72%;height:74%;object-fit:cover;z-index:-1;mask-image:linear-gradient(90deg,transparent,#000 24%,#000 90%,transparent);opacity:.82}.hero-scene header h1{max-width:60%;font-family:Serif,serif}.hero-scene #figure{inset:30% 5% 20%}
+.paper-object{width:68%;margin:0 auto;transform:perspective(1400px) rotateY(-7deg) rotateX(3deg);border:1px solid #aaa9a366;box-shadow:0 30px 65px #0008;background:#eeece7;color:#182025;padding:14px;transition:opacity 1s,transform 1s}.paper-object img{display:block;max-height:30vh;width:100%;object-fit:contain}.paper-object p{text-align:center;font-size:15px;margin:10px 0}.paper-object.dissolving{position:absolute;right:-2%;top:-30px;width:35%;opacity:.22;transform:perspective(1400px) rotateY(-20deg) translateY(-25px)}
+#subtitles{position:absolute;z-index:4;bottom:9%;left:10%;right:10%;text-align:center;font-size:clamp(18px,1.6vw,28px);line-height:1.45;margin:0;text-wrap:pretty}#caption{position:absolute;z-index:3;bottom:2.4%;left:5%;right:5%;font-size:clamp(11px,.94vw,16px);line-height:1.5;color:var(--muted);text-align:center;margin:0}#cue-dots{position:absolute;right:5%;top:18%;display:flex;gap:7px}#cue-dots span{width:20px;height:2px;background:var(--rule)}#cue-dots .active{background:var(--amber)}
+nav{position:relative;display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:95px;padding:13px 3%;border-top:1px solid #29343c;background:#07090b;color:#eeece6;font-size:13px}#toggle{min-width:155px;border-color:#698b90}#seek{flex:1;min-width:140px;accent-color:#edb85f}#chapters{max-width:215px}label{display:flex;align-items:center;gap:5px;white-space:nowrap}#time{font-variant-numeric:tabular-nums;white-space:nowrap}#mode{font-size:11px;color:#a3afb7}dialog{background:#101519;color:#eee;max-width:860px;max-height:85dvh;border:1px solid #53616a;padding:35px;line-height:1.6}dialog::backdrop{background:#000b}dialog h2{font-size:32px}dialog pre{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}#close-evidence{float:right}#error{color:#efbd7b}
+.reduced *{transition:none!important;scroll-behavior:auto!important}body.fallback #glass{display:none}body.fallback .paper-object{transform:none}#fallback-note{display:none}.fallback #fallback-note{display:inline}
+@media(max-width:1000px){#presentation{height:calc(100dvh - 150px)}nav{font-size:12px;gap:7px;min-height:150px}#chapters{max-width:160px}.mast{font-size:10px}h1{margin-top:14px}#subtitles{font-size:18px;left:5%;right:5%}#figure{inset:24% 2% 23%}.hero-copy p{font-size:15px}.paper-object{width:80%}.paper-object img{max-height:26vh}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* The viewport owns two rows: flexible composition and measured auto-height controls. */
+html,body{height:100%;height:100dvh;overflow:hidden}
+body{display:grid;grid-template-rows:minmax(0,1fr) auto}
+#presentation{width:100%;height:100%;min-height:0}
+nav{min-height:0;gap:8px 12px;padding:10px 3%;align-content:center}
+#seek{min-width:170px}#chapters{max-width:200px}
+#glass,#anchors{position:absolute;left:5%;top:23%;width:90%;height:54%;pointer-events:none}
+#glass{z-index:0;opacity:1}#anchors{z-index:2}
+#anchors span{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-size:clamp(12px,1.25vw,21px);color:var(--cyan);text-shadow:0 2px 4px #050709,0 0 8px #050709}
+#glass.mechanism,#anchors.mechanism{width:43%;top:29%;height:43%}
+#figure{inset:23% 5% 23%;pointer-events:none}
+.scene-note{position:absolute;left:0;right:0;bottom:-3%;text-align:center;font-size:clamp(12px,1.12vw,19px);line-height:1.4;color:var(--muted)}
+.arithmetic{position:absolute;left:51%;right:0;top:0;bottom:0;font-size:clamp(13px,1.15vw,21px)}
+.arithmetic .formula{font-size:clamp(17px,1.7vw,30px);color:var(--amber);margin:0 0 .5em}
+.arithmetic p{margin:.3em 0}.arithmetic dl{margin:0}.arithmetic dt{font-size:.8em;color:var(--muted);margin-top:.5em}.arithmetic dd{margin:0;font-variant-numeric:tabular-nums}
+#subtitles{bottom:8.5%;font-size:clamp(17px,1.5vw,27px);line-height:1.4;left:7%;right:7%}
+#caption{bottom:1.7%;line-height:1.35;font-size:clamp(11px,.9vw,16px)}
+.hero-scene header h1{max-width:52%;font-size:clamp(32px,3.5vw,64px)}
+.hero-scene .cue-heading{max-width:45%}.hero-copy{padding-top:1em}.hero-copy .hero-index{font-size:clamp(16px,1.4vw,24px);color:var(--amber)}
+#figure .hero-copy{width:34%;top:20%}.paper-object.dissolving{top:-8%;width:29%;opacity:.18}
+.fallback #anchors{display:none}
+@media(max-width:1000px){#presentation{height:100%}nav{min-height:0;font-size:11px;gap:6px}nav button,nav select{padding:7px}#figure{inset:24% 3% 24%}#chapters{max-width:145px}#subtitles{font-size:16px}#caption{font-size:10px}.arithmetic{font-size:12px}.arithmetic .formula{font-size:16px}}
+@media(max-height:650px){header{top:2%}h1{font-size:27px;margin:10px 0 5px}.cue-heading{font-size:16px}.mast{font-size:10px}#subtitles{font-size:14px}#caption{font-size:9px}.arithmetic{font-size:11px}.arithmetic .formula{font-size:14px}nav{padding:5px 2%}nav button,nav select{padding:5px}}
+
+/* A single quiet rail at the two presentation review sizes. */
+@media(min-width:1100px){
+ nav{display:grid;grid-template-columns:auto auto minmax(70px,1fr) auto minmax(120px,190px) repeat(5,auto);gap:8px;padding:10px 2%;font-size:12px;white-space:nowrap}
+ nav button,nav select{padding:8px}#toggle{min-width:128px}#seek{width:100%;min-width:0;margin:0}#chapters{width:100%;min-width:0;max-width:none}
+ nav label{gap:3px}nav input[type=checkbox]{margin:0 2px 0 0}#mode{display:none}#error:empty{display:none}#error:not(:empty){position:absolute;bottom:100%;right:2%;background:#000;padding:5px;white-space:normal}
+}
+#anchors span{font-size:clamp(14px,1.3vw,23px);text-shadow:0 2px 4px #000,0 0 8px #000}
+#anchors .anchor-leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1}
+.anchor-leaders line{stroke-width:1;vector-effect:non-scaling-stroke;opacity:.5}

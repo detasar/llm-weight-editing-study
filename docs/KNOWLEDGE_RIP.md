@@ -1,6 +1,6 @@
 # Knowledge RIP — Editing Neural Networks with Language Models
 
-Davut Emre (detasar) · 4 November 2026
+Davut Emre Taşar (detasar) · 4 November 2026
 
 **Research question.** Can an LLM propose a bounded weight edit that improves a
 held-out decision rule, and does access to independent development experience
@@ -42,3 +42,10 @@ Adult’s metric tradeoff remain substantive outcomes.
 [methods](METHODS.md), [scorer](SCORER.md), [reproduction](REPRODUCE.md).
 Snapshot export made no model calls; original v2 measurement completed.
 Manifest: `8f8869a113d93000bb8fffd547258b36ab955a6bf7a7f8ddbe589fbdbd231d38`.
+
+**Read and present.** [45-minute continuous presentation](../publication/2026-11-04/START_PRESENTATION.html),
+[26-page reader PDF](../publication/2026-11-04/RESEARCH_REPORT.pdf),
+[reader HTML](../publication/2026-11-04/RESEARCH_REPORT.html) and
+[offline ZIP](../publication/2026-11-04/BBVA_RESEARCH_OFFLINE.zip).
+After unzipping, double-click START_PRESENTATION.html; no server is needed.
+See [delivery](DELIVERY.md) for the backup PDF, checksums and licenses.

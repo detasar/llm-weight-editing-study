@@ -20,3 +20,9 @@ artifacts/
 presentation/offline/
 web/public/report/
 web/public/presentation/
+
+# Generated publication staging and local narration/QA material
+web/public/publication/
+**/*NARRATOR*
+**/SPEAKER_NOTES.md
+web/delivery-public/

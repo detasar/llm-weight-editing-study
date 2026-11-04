@@ -1,0 +1,39 @@
+{
+  "title": "Editing Neural Networks with Language Models",
+  "author": "Davut Emre Taşar",
+  "event": "BBVA AI Innovation",
+  "duration_seconds": 2700,
+  "chapters": 33,
+  "report_pages": 26,
+  "presentation_backup_pages": 59,
+  "files": {
+    "PRESENTATION_BACKUP.pdf": {
+      "bytes": 12307796,
+      "sha256": "a4de0b42c6ce860b96722df829a32fbb62cff67985fd915c9be6f650f8294c63"
+    },
+    "README.txt": {
+      "bytes": 929,
+      "sha256": "333675071130d2b3308b61f97f2bb9d3185846c0bbdf56d08caea56d54952967"
+    },
+    "RESEARCH_REPORT.html": {
+      "bytes": 2460789,
+      "sha256": "113f184ecb187e8a62502ef480592803678863e84c94fb2490dc98266e0a5329"
+    },
+    "RESEARCH_REPORT.pdf": {
+      "bytes": 1750584,
+      "sha256": "b988c6a5db52d508e76a7909e3fb4aa1f3e82c627ff6f5f105de312b45d54516"
+    },
+    "START_PRESENTATION.html": {
+      "bytes": 3114292,
+      "sha256": "5bb0e14a99a7432532f8095c15579d113b488c7542e4b278ff35f8e4385c5cbc"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "bytes": 10909,
+      "sha256": "c215b6eba16eee6f1886f3f0ef1816433c3274d315fe12e4b0ca2ae605d40352"
+    },
+    "BBVA_RESEARCH_OFFLINE.zip": {
+      "bytes": 13945322,
+      "sha256": "4944d02acd65287cbc3c2a157297e43f10ca5cbe3287f9fb5690ff4d13096fcb"
+    }
+  }
+}

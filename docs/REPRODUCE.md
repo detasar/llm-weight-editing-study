@@ -249,3 +249,40 @@ export. Every LM task is paired by original ID/index privately and by ordinal,
 label and choice-length arrays publicly. v2 must use the same ordered panels as
 v1 when imported. Hashes protect the snapshot against corruption; they are not
 signatures or a substitute for the original private records.
+
+# Build the current publication
+
+The accepted delivery is versioned under `publication/2026-11-04/`.
+Landing builds validate and copy these exact artifacts; they do not regenerate
+the accepted rendering or run a model. With Node 24+ and the locked dependencies:
+
+```sh
+npm --prefix web ci
+node --test web/tests/delivery.test.mjs
+npm --prefix web run build
+```
+
+The landing is in `web/dist/`. Pages builds set `PAGES=1` to use
+`/llm-weight-editing-study/`; publication links are relative under that base.
+To regenerate source artifacts separately, from the repository root:
+
+```sh
+node web/build-story.mjs
+python scripts/build_research_report.py
+```
+
+Both generators write to `artifacts/bbva-research/`, outside the public delivery
+path. Story generation uses the installed local Vite dependencies. Report
+generation additionally requires Python 3.12+, XeLaTeX with the TeX packages and
+TeX Gyre fonts declared in the generator, pandoc, pdfinfo and pdftotext on PATH.
+Missing tools are failures, not a reason to substitute a different renderer.
+These source builds are not the captured presentation backup or the offline ZIP;
+the coordinator supplies those after render acceptance. Do not replace accepted
+versioned files or their checksums without renewed artifact acceptance.
+
+Historical `scripts/export_visuals.mjs` and `scripts/browser_qa.mjs` target the
+retired interface and do not verify the current continuous story. Focused
+packaging tests check actual artifact hashes, local dependencies and exclusions;
+they do not claim visual or public readback acceptance. See [delivery](DELIVERY.md)
+for offline instructions. Runtime playback needs only a browser: unzip and
+double-click START_PRESENTATION.html, without Python or a local server.
