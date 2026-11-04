@@ -1,0 +1,39 @@
+{
+  "accepted_commit": "ed15068c13ffb1cb1e3222d1056c1748b1e1292a",
+  "native_source_sha256": {
+    "io.py": "1d1f0be4da8ce32b19a6d39d7ccb6ad82e37da8448c58ab1f9c5470ab7e4edf3",
+    "metrics.py": "fa5da12ec0c58af4698140c1da03e43fa0b98a429c44b667086c499ab7015575",
+    "model.py": "970d54d073cef6f67f37de9e1f35b9787af3d03cd58a1405349098bc943a7ad8",
+    "data.py": "b04490be789f96617e9767b123283f0520ad9164eea4ec15eda850a6bb58859a",
+    "patches.py": "a39f90a57fca53b1b31878bf3a4412a792849c913f2e60f594fe111fa4404633",
+    "controller.py": "f5ce05f02e38063cfb5e01013e30c02e948beebb936db10306e1de6aef25ee58",
+    "lm_runtime.py": "d47110f15a3b1086b6efebfbf80ab21133bc7ba5da2356760b9f9d60eb55bf17",
+    "lm_patches.py": "7e0b260c3a79006b4344c84df14793dbc58aece64cacc16a3c526a8a112cb23a",
+    "lm_controller.py": "6ea6ab8141abdc802c2fb5c1eb77a44f1d66a8e775518697081ca1015ffa77c4",
+    "lm_scoring.py": "992c4915f4d4c77e4ad05e1abe8f9b60cd8948bd8d25b677d164a0896e9ca456"
+  },
+  "adaptations": [
+    "lm_scoring.final_task local require replaces cohort-only utility dependency",
+    "driver retains native transport only; explicit CLI/env/PATH resolution; caller-owned output path",
+    "saved_lm contains exact aggregate/bootstrap functions without inference imports",
+    "cowork/experience copied from accepted source; legacy source guards preserved; fresh-only source admission and source inventory revalidation use execution.py",
+    "cowork admits FRESH_PUBLIC_LM_V1 compact context and records its own context policy; actual validated dtype reaches actors",
+    "execution.py reuses accepted editor loop, native controllers, scheduler, patch spaces and canonical scorer with new public identity, input closure and single-use scope"
+  ],
+  "fresh_execution": {
+    "scope": "FRESH_PUBLIC_LM_V1",
+    "historical_exact_validation": false,
+    "run": "LM only; four-condition explicit fresh development then frozen ARC/PIQA assessment",
+    "replay": "Adult released graph or LM exact descriptors; offline user inputs; no editors",
+    "backend": "new-run declared engineering runtime verified; no native64 or CPU parity claim",
+    "verification": "OFFLINE_SYNTHETIC_ONLY",
+    "real_portable_execution": "NOT_RUN",
+    "main_lm_replay_patches": "../data/lm_v2_frozen_patches.json",
+    "historical_v1_patches": "lm-v1-frozen-patches.json"
+  },
+  "copied_native_source_sha256": {
+    "cowork.py": "d59c2c338235d16e78cc00b3303a2c862af60f32d95b3fc77a1701d7af4c0241",
+    "experience.py": "5a2189b1a6987d9697c141dcab5124d32d6891787aa07dccdbf272f90d92373d"
+  },
+  "historical_execution_constraint": "Full historical run/replay orchestration requires sealed Adult DEV_HISTORY audit plus prospective train8 backend chain outside the approved public input closure. Historical source-hash and consumption bindings cannot be reused for a new publication checkout. No full scientific execution is claimed."
+}

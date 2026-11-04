@@ -1,0 +1,21 @@
+Our report text, original artwork and derived numeric data are licensed under
+Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Attribute "Editing Neural Networks with Language Models, Davut Emre (detasar), 4 November 2026" and identify modifications. Code is MIT (see LICENSE).
+
+This grant covers only material we own. No third-party model weights or dataset
+binaries are bundled. Dataset/model terms remain with their rights holders:
+- UCI Adult: https://archive.ics.uci.edu/dataset/2/adult
+  Becker, Barry and Kohavi, Ronny (1996), Adult, UCI Machine Learning Repository.
+  DOI: https://doi.org/10.24432/C5XW20 (repository lists CC BY 4.0).
+- ARC: https://huggingface.co/datasets/allenai/ai2_arc
+  https://allenai.org/data/arc (upstream distribution/terms apply).
+- PIQA: https://huggingface.co/datasets/baber/piqa
+  Original benchmark: https://github.com/ybisk/ybisk.github.io/tree/master/piqa
+  Consult the original data terms; we grant no rights over upstream data.
+- SmolLM2: https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B
+  Consult the pinned model card and its Apache-2.0 license.
+- Canonical harness: https://github.com/EleutherAI/lm-evaluation-harness
+  Its upstream MIT license applies; installed separately at the documented commit.

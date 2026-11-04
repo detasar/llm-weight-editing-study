@@ -1,0 +1,16 @@
+{
+  "execution": "fresh-public-v1",
+  "arm": "LM",
+  "seed": 101,
+  "backend_acceptance": "declared-runtime-engineering-not-native64",
+  "lm": {
+    "attention": "eager",
+    "candidate_limit": 5,
+    "device": "mps",
+    "dtype": "float32",
+    "joint_rounds": 5,
+    "max_changed_fraction": 0.001,
+    "relative_frobenius": 0.05,
+    "runtime_profile": "mps-fp32-eager-engineering-v1"
+  }
+}

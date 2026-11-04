@@ -1,0 +1,27 @@
+import {mkdir,writeFile,readFile,cp,rm} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {session,root} from './browser_qa.mjs';
+import path from 'node:path';
+const out=path.join(root,'presentation'),qa=path.join(root,'artifacts/qa');await mkdir(out,{recursive:true});await mkdir(qa,{recursive:true});await mkdir(path.join(root,'report'),{recursive:true});
+if(process.argv.includes('--package')){
+ // Recreate only our ignored packaging output, so stale files never enter a new ZIP.
+ await rm(path.join(out,'offline'),{recursive:true,force:true});
+ await rm(path.join(out,'weight-editing-offline.zip'),{force:true});
+ // Exclude earlier generated ZIPs to prevent recursively packaging the release.
+ await cp(path.join(root,'web/dist'),path.join(out,'offline/site'),{recursive:true,filter:src=>!src.endsWith('.zip')});
+ await cp(path.join(root,'report/report.pdf'),path.join(out,'offline/report.pdf'));
+ await cp(path.join(out,'presentation.pdf'),path.join(out,'offline/presentation.pdf'));
+ await writeFile(path.join(out,'offline/launch.py'),`#!/usr/bin/env python3\n"""Launch the frozen offline publication; no installation or network needed."""\nfrom http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler\nfrom pathlib import Path\nimport os, webbrowser\nos.chdir(Path(__file__).parent / 'site')\ns=ThreadingHTTPServer(('127.0.0.1', 0), SimpleHTTPRequestHandler)\nprint('Offline study: http://127.0.0.1:%s/' % s.server_port)\nwebbrowser.open('http://127.0.0.1:%s/' % s.server_port)\ns.serve_forever()\n`);
+ await writeFile(path.join(out,'offline/README.txt'),'Run python3 launch.py. Requires Python 3 and a browser. No npm, model, API, install or internet needed. PDF backups included.\n');
+ execFileSync('zip',['-X','-qr',path.join(out,'weight-editing-offline.zip'),'offline'],{cwd:out});await mkdir(path.join(root,'web/dist/presentation'),{recursive:true});await cp(path.join(out,'weight-editing-offline.zip'),path.join(root,'web/dist/presentation/weight-editing-offline.zip'));console.log('Offline ZIP created.');
+}else{
+ const s=await session();const context=await s.browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:2,reducedMotion:'reduce'});await context.route('**/*',r=>new URL(r.request().url()).origin===new URL(s.url).origin?r.continue():r.abort());const page=await context.newPage();
+ try{
+ await page.goto(s.url+'?renderer=2d');await page.waitForFunction(()=>window.__study?.ready);const scenes=await page.evaluate(()=>window.__study.scenes);
+ const targets=process.argv.includes('--prototypes')?['cover','adult','results']:scenes;await mkdir(path.join(qa,'scenes'),{recursive:true});await mkdir(path.join(root,'report/figures'),{recursive:true});
+ for(const slug of targets){await page.goto(s.url+'#'+slug);await page.waitForFunction(()=>window.__study?.ready);await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(qa,'scenes',slug+'-interactive.png')});await page.goto(s.url+'?renderer=2d#'+slug);await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(qa,'scenes',slug+'.png')});if(['adult','results','decisions','lm-final','lm-development'].includes(slug)){const font=await readFile(path.join(root,'web/node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2'));const svg=await page.locator('.visual svg').first().evaluate((el,font64)=>{const copy=el.cloneNode(true);copy.setAttribute('style','color:#142432;background:#f8f5ef;font-family:Manrope,sans-serif');const st=document.createElementNS('http://www.w3.org/2000/svg','style');st.textContent='@font-face{font-family:Manrope;src:url(data:font/woff2;base64,'+font64+') format("woff2")}text{fill:currentColor;font-size:19px}.big-number{font-family:Manrope;font-size:52px}';copy.prepend(st);return new XMLSerializer().serializeToString(copy);},font.toString('base64'));await writeFile(path.join(root,'report/figures',slug+'.svg'),svg);await page.locator('.visual svg').first().screenshot({path:path.join(root,'report/figures',slug+'.png'),scale:'device'});}}
+ if(!process.argv.includes('--prototypes')){for(const [method,candidate] of [['Sol','1'],['Astra','1'],['joint','2']]){for(const slug of ['mlp','lm-development']){await page.goto(s.url+'#'+slug);await page.selectOption('#method',method);await page.selectOption('#candidate',candidate);await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(qa,'scenes',slug+'-'+method+'-'+candidate+'.png')});}}}
+ if(!process.argv.includes('--prototypes')){for(const [view,dest] of [['report','report/report.pdf'],['print-deck','presentation/presentation.pdf']]){await page.goto(s.url+'?view='+view);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({media:'print'});await page.pdf({path:path.join(root,dest),preferCSSPageSize:true,printBackground:true,tagged:true});const prefix=path.join(qa,view+'-page');try{execFileSync('pdftoppm',['-scale-to','1800','-png',path.join(root,dest),prefix],{stdio:'pipe'});}catch(e){throw new Error('PDF generated; page rasterization requires pdftoppm: '+e.message);}await mkdir(path.dirname(path.join(root,'web/dist',dest)),{recursive:true});await cp(path.join(root,dest),path.join(root,'web/dist',dest));await page.emulateMedia({media:'screen'});}}
+ console.log('Visual exports saved: '+targets.length+' scene captures.');
+ }finally{await context.close();await s.close();}
+}

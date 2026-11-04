@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this publication snapshot and the upstream datasets/models when using the evidence."
+title: "Editing Neural Networks with Language Models"
+authors:
+  - name: "Davut Emre (detasar)"
+type: software
+version: 1.0.0
+date-released: 2026-11-04
+license: MIT
+abstract: "Exploratory seed101 weight-editing evidence with saved numeric predictions, canonical metrics, paired uncertainty and completed Adult controls and corrected-prompt SmolLM2 v2 results."

@@ -1,0 +1,36 @@
+{
+  "Astra": {
+    "executed_weight_sha256": "18349207e815281ad02695fe315c4a66eff9d9f5f0dc7ca571e99f324d0a701d",
+    "original_candidate_limit": 5,
+    "patch": {
+      "ops": []
+    },
+    "patch_sha256": "b2f0effc1a37cecc88986e93381ca24c017e5b7a288ea14a9462ae9b4c466f0c",
+    "status": "LOCKED"
+  },
+  "Sol": {
+    "executed_weight_sha256": "18349207e815281ad02695fe315c4a66eff9d9f5f0dc7ca571e99f324d0a701d",
+    "original_candidate_limit": 5,
+    "patch": {
+      "ops": []
+    },
+    "patch_sha256": "b2f0effc1a37cecc88986e93381ca24c017e5b7a288ea14a9462ae9b4c466f0c",
+    "status": "LOCKED"
+  },
+  "baseline": {
+    "executed_weight_sha256": "18349207e815281ad02695fe315c4a66eff9d9f5f0dc7ca571e99f324d0a701d",
+    "patch": {
+      "ops": []
+    },
+    "patch_sha256": "b2f0effc1a37cecc88986e93381ca24c017e5b7a288ea14a9462ae9b4c466f0c",
+    "status": "LOCKED"
+  },
+  "joint": {
+    "executed_weight_sha256": "18349207e815281ad02695fe315c4a66eff9d9f5f0dc7ca571e99f324d0a701d",
+    "patch": {
+      "ops": []
+    },
+    "patch_sha256": "b2f0effc1a37cecc88986e93381ca24c017e5b7a288ea14a9462ae9b4c466f0c",
+    "status": "LOCKED"
+  }
+}

@@ -1,0 +1,17 @@
+You edit an intact SmolLM2-1.7B base Llama causal language model, without gradients.
+Return only an envelope {"action_json":"<one JSON action>"}. No tools, code,
+filesystem, external inference or extra data. Your own transcript is the only history.
+Only model.layers.<index>.mlp.down_proj.weight is editable. Implemented operations:
+selected-column scaling and sparse explicit scalar deltas. No low-rank operations.
+Each candidate is complete relative to immutable original weights. Deltas are cast to
+float32 before application. Actual changed scalars / unique model parameters <=0.001;
+relative Frobenius change per tensor <=0.05. No overlapping operations. All finite.
+The initial view supplies architecture, bounded tensor stats, train128 diagnostic
+questions/labels/predictions, and one shared validation128 baseline. Validation
+examples and held-out examples are inaccessible. acc_norm uses choice TEXT CHARACTER
+length, following the canonical pinned harness. acc is secondary. Select the best
+validation acc_norm, then smallest delta L2, changed count, earliest index. No-op
+candidate zero remains selectable. At most 15 turns and the supplied candidate budget.
+Allowed schema actions: inspect_stats, inspect_slice (<=32 values), probe_summary
+(<=32 preset train examples, at most5 attempted requests per editor, nontransferable), evaluate_candidate, submit_final.
+Never request held-out data or modify embeddings, head, attention, norms or prompts.

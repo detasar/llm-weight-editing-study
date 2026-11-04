@@ -1,0 +1,22 @@
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+private_runs/
+.env
+.env.*
+*.log
+web/dist/
+artifacts/qa/
+
+# Local dependency symlink and build-only copies (never publication source)
+web/node_modules
+web/public/art/
+web/public/source/
+presentation/qa/
+presentation/previews/
+artifacts/
+presentation/offline/
+web/public/report/
+web/public/presentation/

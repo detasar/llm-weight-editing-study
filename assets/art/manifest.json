@@ -1,0 +1,22 @@
+{
+  "license": "CC-BY-4.0",
+  "kind": "Conceptual illustrations; not measured network topology or scientific plots",
+  "generation": "OpenAI ImageGen, directed for this study",
+  "assets": [
+    {
+      "file": "independent-to-joint.png",
+      "sha256": "57e4a75e74a08c801b200a98f952b73a47511348a238ebd44e0b85b5d773c2bc",
+      "role": "Section opening: independent exploration informing a joint search"
+    },
+    {
+      "file": "matrix-intervention.png",
+      "sha256": "ed07a97bbc6f36d1225bdd90b2750e2ae8044c99e2f295c36170fda8afdc63f8",
+      "role": "Language-model section: conceptual local matrix intervention"
+    },
+    {
+      "file": "network-cover.png",
+      "sha256": "d0c50dc5eef6206aa8f4d7781fd642de7e14d73bb4f3668435f77c7ccd4bd254",
+      "role": "Opening cover: a conceptual view of neural weight intervention"
+    }
+  ]
+}
