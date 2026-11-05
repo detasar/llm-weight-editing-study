@@ -8,7 +8,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <p class="byline">Davut Emre Taşar</p>
   <p class="intro">Can a language model improve a decision rule by changing a few weights?</p>
   <a class="button" href="${publication}START_PRESENTATION.html">Start the 45-minute presentation <span aria-hidden="true">↗</span></a>
-  <p class="detail">One continuous story · 33 chapters · written explanation</p></div>
+  <p class="detail">30 scenes · 45-minute speaking plan · Turkish narration</p></div>
   <figure><img src="story-assets/weight-space-hero.png" alt="Conceptual glass neural network with a highlighted intervention" width="1536" height="1024"><figcaption>Conceptual illustration; not measured network geometry.</figcaption></figure>
 </header>
 <main id="main">
@@ -21,9 +21,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <p class="detail">One exploratory seed-101 session. Paired intervals measure example uncertainty, not variation across editor sessions. Unequal candidate budgets and prior panel exposure limit comparisons; these results do not establish cooperative synergy.</p>
 <p><a href="${source}data/manifest.json">Canonical results and exact values →</a></p></section>
 <section aria-labelledby="read"><p class="eyebrow">Read, present, reproduce</p><h2 id="read">One publication, online or offline.</h2>
-<div class="downloads"><a href="${publication}RESEARCH_REPORT.pdf"><strong>Research PDF</strong><span>26-page reader report</span></a><a href="${publication}RESEARCH_REPORT.html"><strong>Research HTML</strong><span>Self-contained browser edition</span></a><a href="${publication}PRESENTATION_BACKUP.pdf"><strong>Presentation PDF backup</strong><span>59 captured explanatory states</span></a><a href="${publication}BBVA_RESEARCH_OFFLINE.zip" download><strong>Download offline ZIP</strong><span>Presentation, reader report and PDF backup</span></a></div>
-<p><strong>After unzipping, double-click START_PRESENTATION.html.</strong> Click Start presentation. Space pauses or resumes; Left/Right moves between explanatory cues. No server, installation, API key or internet connection is needed for playback.</p>
-<p>The presentation uses synchronized written explanation. Reduced motion and a 2D view are available in its controls.</p>
+<div class="downloads"><a href="${publication}RESEARCH_REPORT.pdf"><strong>Research PDF</strong><span>26-page reader report</span></a><a href="${publication}RESEARCH_REPORT.html"><strong>Research HTML</strong><span>Self-contained browser edition</span></a><a href="${publication}PRESENTATION_BACKUP.pdf"><strong>Presentation PDF backup</strong><span>30 final scene pages</span></a><a href="${publication}BBVA_RESEARCH_OFFLINE.zip" download><strong>Download offline ZIP</strong><span>Final presentation, Turkish script, report and PDF backup</span></a></div>
+<p><strong>After unzipping, double-click START_PRESENTATION.html.</strong> The first scene opens directly. Right/Space advances; Left goes back; R replays; G opens the scene map; N opens Turkish narration; F toggles fullscreen. No server, installation, API key or internet connection is needed for playback.</p>
+<p>The English presentation includes a complete Turkish speaking script and a separate speaker window. The Play 45 min control provides timed playback. Rendering combines Three.js geometry with Canvas, SVG and HTML.</p>
+<p><a href="${publication}TURKCE_ANLATIM.pdf">Türkçe anlatım — PDF</a> · <a href="${publication}TURKCE_ANLATIM.html">Türkçe anlatım — HTML</a> · <a href="${publication}MOTION_PREVIEW.mp4">Motion preview</a></p>
 <nav class="resources" aria-label="Research resources"><a href="${source}docs/REPRODUCE.md">Reproducibility</a><a href="${source}docs/METHODS.md">Methods</a><a href="${source}docs/SCORER.md">Scoring</a><a href="${source}docs/DELIVERY.md">Delivery guide</a><a href="https://github.com/detasar/llm-weight-editing-study">Sources on GitHub</a><a href="${publication}artifact-manifest.json">Artifact checksums</a></nav></section>
 </main>
 <footer><p>Davut Emre Taşar · BBVA AI Innovation · 2026</p><p>Inspired by Takehi, Teoh, Zhang and Khattab, <a href="https://rikiyat.github.io/blog/weight-space-programming/">Sparks of Weight-Space Programming</a>. Their title-page excerpt remains third-party copyright.</p><p>Code: <a href="${source}LICENSE">MIT</a> · Original report, artwork and derived numeric data: <a href="${source}CONTENT_LICENSE">CC BY 4.0</a> · <a href="${publication}THIRD_PARTY_NOTICES.txt">Third-party notices</a></p></footer>`;

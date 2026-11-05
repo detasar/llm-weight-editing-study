@@ -3,17 +3,13 @@
   "author": "Davut Emre Taşar",
   "event": "BBVA AI Innovation",
   "duration_seconds": 2700,
-  "chapters": 33,
+  "chapters": 30,
   "report_pages": 26,
-  "presentation_backup_pages": 59,
+  "presentation_backup_pages": 30,
   "files": {
-    "PRESENTATION_BACKUP.pdf": {
-      "bytes": 12307796,
-      "sha256": "a4de0b42c6ce860b96722df829a32fbb62cff67985fd915c9be6f650f8294c63"
-    },
-    "README.txt": {
-      "bytes": 929,
-      "sha256": "333675071130d2b3308b61f97f2bb9d3185846c0bbdf56d08caea56d54952967"
+    "START_PRESENTATION.html": {
+      "bytes": 1091834,
+      "sha256": "4c9111c4788d554e20a809400ccbfbf967b890dfbdb28454da176876f26e948c"
     },
     "RESEARCH_REPORT.html": {
       "bytes": 2460789,
@@ -23,17 +19,47 @@
       "bytes": 1750584,
       "sha256": "b988c6a5db52d508e76a7909e3fb4aa1f3e82c627ff6f5f105de312b45d54516"
     },
-    "START_PRESENTATION.html": {
-      "bytes": 3114292,
-      "sha256": "5bb0e14a99a7432532f8095c15579d113b488c7542e4b278ff35f8e4385c5cbc"
+    "PRESENTATION_BACKUP.pdf": {
+      "bytes": 11341797,
+      "sha256": "ffcb3354b8f5b030488f93c0bcca55239c932d46c98209080da404f9109dead6"
+    },
+    "README.txt": {
+      "bytes": 1029,
+      "sha256": "35579f9cbb1f599ce8221a205bc4b87a03b5a8a4234c6369788d9eef72e5db93"
     },
     "THIRD_PARTY_NOTICES.txt": {
-      "bytes": 10909,
-      "sha256": "c215b6eba16eee6f1886f3f0ef1816433c3274d315fe12e4b0ca2ae605d40352"
+      "bytes": 13068,
+      "sha256": "9909cbf9818d704075ccfb89e82fa2a88fab31f77b87555e1a88380050900108"
+    },
+    "TURKCE_ANLATIM.html": {
+      "bytes": 53749,
+      "sha256": "4a55ff33083243918077ad1987b5c90da27585071ad336e5be5e7b896aee076b"
+    },
+    "TURKCE_ANLATIM.md": {
+      "bytes": 45851,
+      "sha256": "aa4d10d86506f05bc771566379c0a3ca378028940c070ad44c04fc08a15d04d9"
+    },
+    "TURKCE_ANLATIM.pdf": {
+      "bytes": 191556,
+      "sha256": "965fce3d75b81e3b0b4e7902cba8c9693a2539ed13d64a89675c0df993a63d58"
+    },
+    "MOTION_PREVIEW.mp4": {
+      "bytes": 1845239,
+      "sha256": "83a081a1249b45c95bcb01a41fe9ed111784459c3b987c6439d1850b69f2303c"
+    },
+    "DELIVERY_PREVIEW.jpg": {
+      "bytes": 465653,
+      "sha256": "53cbc1245e2f7ca0ed6face9cc6308c7db78c724861072f8479d076e778be105"
     },
     "BBVA_RESEARCH_OFFLINE.zip": {
-      "bytes": 13945322,
-      "sha256": "4944d02acd65287cbc3c2a157297e43f10ca5cbe3287f9fb5690ff4d13096fcb"
+      "bytes": 15457125,
+      "sha256": "3cc04f93bfec061ae347f62e1f66e1facf7a3222f4eee34af76383a436fc645d"
     }
-  }
+  },
+  "scenes": 30,
+  "authored_states": 98,
+  "presentation_language": "English",
+  "narration_language": "Turkish",
+  "presentation_revision": "final-revised-30-scenes",
+  "presentation_source_sha256": "09973f744d2d0ae49be67c902c1b8340742901de4a14d96a702cef11c0ddc3ac"
 }

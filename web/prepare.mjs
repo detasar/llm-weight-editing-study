@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 export const version = '2026-11-04';
-export const deliveryFiles = ['START_PRESENTATION.html', 'RESEARCH_REPORT.html', 'RESEARCH_REPORT.pdf', 'PRESENTATION_BACKUP.pdf', 'BBVA_RESEARCH_OFFLINE.zip', 'README.txt', 'THIRD_PARTY_NOTICES.txt'];
+export const deliveryFiles = ['START_PRESENTATION.html', 'RESEARCH_REPORT.html', 'RESEARCH_REPORT.pdf', 'PRESENTATION_BACKUP.pdf', 'BBVA_RESEARCH_OFFLINE.zip', 'README.txt', 'THIRD_PARTY_NOTICES.txt', 'TURKCE_ANLATIM.html', 'TURKCE_ANLATIM.md', 'TURKCE_ANLATIM.pdf', 'MOTION_PREVIEW.mp4', 'DELIVERY_PREVIEW.jpg'];
 const documents = ['DELIVERY.md', 'KNOWLEDGE_RIP.md', 'METHODS.md', 'REPRODUCE.md', 'SCORER.md', 'VERSIONS.md'];
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 export async function verifyPublication(directory = path.join(root, 'publication', version)) {
@@ -22,6 +22,7 @@ export async function prepare(destination) {
   await rm(destination, {recursive: true, force: true});
   await mkdir(path.join(destination, 'source/docs'), {recursive: true});
   for (const dir of ['configs', 'prompts', 'data']) await cp(path.join(root, dir), path.join(destination, 'source', dir), {recursive: true});
+  await cp(path.join(root, 'presentation/revised'), path.join(destination, 'source/presentation/revised'), {recursive: true});
   for (const name of documents) {
     const text = (await readFile(path.join(root, 'docs', name), 'utf8')).replaceAll('../publication/', '../../publication/');
     await writeFile(path.join(destination, 'source/docs', name), text);

@@ -1,17 +1,18 @@
-Editing Neural Networks with Language Models
-Davut Emre Taşar · BBVA AI Innovation · 4 November 2026
+BBVA AI Innovation — From Weight Edits to Decisions
+Final presentation: 30 scenes, 98 authored states, 45-minute speaking plan.
 
-1. Unzip the complete package.
-2. Double-click START_PRESENTATION.html in a current desktop browser.
-3. Click Start presentation. One continuous timeline runs for 45minutes.
-   Space pauses/resumes; Left/Right moves between explanatory cues.
-   Chapter navigation, Reduced motion and 2Dview are optional.
+Unzip the complete package, then double-click START_PRESENTATION.html.
+The first scene opens directly. Right/Space advances an event; Left goes back.
+R replays the scene; G opens the scene map; N opens Turkish narration;
+F toggles fullscreen. The Play 45 min button starts timed playback.
+The narration panel can open a separate speaker window.
 
-No server, installation, API key or internet connection is needed for playback.
-The presentation has synchronized written explanation; it is not a prerecorded narrated video.
+TURKCE_ANLATIM.pdf, .html and .md contain the Turkish speaking script.
+PRESENTATION_BACKUP.pdf has 30 static scene pages.
+MOTION_PREVIEW.mp4 contains selected silent excerpts.
+RESEARCH_REPORT.pdf / .html preserve the existing research report.
 
-RESEARCH_REPORT.pdf is the 26-page reader report. RESEARCH_REPORT.html is its self-contained browser edition.
-PRESENTATION_BACKUP.pdf contains 59 captured explanatory states from the 33chapters.
-THIRD_PARTY_NOTICES.txt lists bundled software/font licenses and reference-image attribution.
-
-https://github.com/detasar/llm-weight-editing-study
+All runtime assets are embedded; no provider account or installation is required.
+Rendering uses Three.js geometry projected to Canvas with SVG/HTML compositions.
+Editable sources: presentation/revised/ in the repository.
+The published scientific data and the research report are unchanged by this revision.

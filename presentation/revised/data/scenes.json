@@ -1,0 +1,618 @@
+[
+  {
+    "key": "opening",
+    "chapter": "THE IDEA",
+    "title": "Can one AI change\nhow another AI behaves?",
+    "subtitle": "A research talk about reading model parameters, editing them, and measuring the consequences.",
+    "kind": "opening",
+    "steps": [
+      "Meet the source study",
+      "See its central idea",
+      "Follow the intervention"
+    ],
+    "insights": [
+      "Sparks of Weight-Space Programming · Takehi, Teoh, Zhang & Khattab · 2 November 2026",
+      "A language model reads another network’s numerical parameters and proposes changes.",
+      "The authors tested the resulting behavior in games, control tasks and language models."
+    ],
+    "seconds": 73,
+    "rq": "",
+    "morph": "orbit"
+  },
+  {
+    "key": "source",
+    "chapter": "THE SOURCE STUDY",
+    "title": "Astra used the task to design a weight change.",
+    "subtitle": "The source paper connects a behavior, the numbers that produce it, and an intervention.",
+    "kind": "source",
+    "steps": [
+      "Define the target behavior",
+      "Inspect the numerical network",
+      "Write an intervention",
+      "Run the modified network"
+    ],
+    "insights": [
+      "A trained network is the object being edited. GPT-6 Astra is the editor.",
+      "The editor receives the task, the network structure and access to its parameters.",
+      "Its output specifies numerical changes to the target network.",
+      "Two examples show the idea clearly: a driving policy and a math-solving language model."
+    ],
+    "seconds": 73,
+    "rq": "",
+    "morph": "network"
+  },
+  {
+    "key": "car",
+    "chapter": "SOURCE EXAMPLE · CONTROL",
+    "title": "A stalled car gets a run-up.",
+    "subtitle": "Astra rewrote a small control path using the car’s position and velocity.",
+    "kind": "car",
+    "steps": [
+      "Watch the original behavior",
+      "See the control rule",
+      "Apply the revised behavior",
+      "Read the measured outcome"
+    ],
+    "insights": [
+      "The trained policy drove onto the ramp and stalled.",
+      "Back up → accelerate toward the ramp → return control after the jump.",
+      "Astra changed 6,073 of 171,664 actor parameters in one response.",
+      "The edited policy reached the target in all 1,024 held-out test episodes."
+    ],
+    "seconds": 102,
+    "rq": "",
+    "morph": "ribbon"
+  },
+  {
+    "key": "loop",
+    "chapter": "SOURCE EXAMPLE · LANGUAGE",
+    "title": "A math model kept circling back.",
+    "subtitle": "Qwen3.5-0.8B often spent its output budget repeating its reasoning.",
+    "kind": "loop",
+    "steps": [
+      "A problem enters the model",
+      "Repetition consumes the answer",
+      "Astra compares internal responses"
+    ],
+    "insights": [
+      "The task asks the model to solve a math problem and produce a final answer.",
+      "In the first diagnostic batch, 85 of 96 answers reached the 32,768-token limit.",
+      "Astra compares productive and repetitive contexts to locate the relevant contributions."
+    ],
+    "seconds": 73,
+    "rq": "",
+    "morph": "orbit"
+  },
+  {
+    "key": "direction",
+    "chapter": "SOURCE EXAMPLE · THE EDIT",
+    "title": "Reduce the contribution that drives repetition.",
+    "subtitle": "Astra measured a repetition-related direction and modified the MLP columns writing it.",
+    "kind": "direction",
+    "steps": [
+      "Find the direction",
+      "Select the writers",
+      "Set the intervention strength",
+      "Apply the chosen change"
+    ],
+    "insights": [
+      "The direction comes from matched productive and repetitive contexts.",
+      "The final edit targets 64 MLP output columns in each of layers 15 and 19.",
+      "The source explored intervention strength; its chosen multiplier was 6.",
+      "Each selected column has six times its projection along that direction subtracted."
+    ],
+    "seconds": 117,
+    "rq": "",
+    "morph": "matrix"
+  },
+  {
+    "key": "source-results",
+    "chapter": "SOURCE EXAMPLE · OUTCOME",
+    "title": "More answers reached a useful conclusion.",
+    "subtitle": "The same source evaluation settings were used before and after the edit.",
+    "kind": "sourceResults",
+    "steps": [
+      "Compare correct answers",
+      "Compare truncated answers",
+      "Connect intervention to behavior"
+    ],
+    "insights": [
+      "MATH-500 accuracy rose from 7.9% to 48.1%.",
+      "Answers reaching the token limit fell from 93.0% to 33.1%.",
+      "The authors’ diagnosis links the gain to reducing repetitive generation."
+    ],
+    "seconds": 73,
+    "rq": "",
+    "morph": "bars"
+  },
+  {
+    "key": "questions",
+    "chapter": "OUR STUDY",
+    "title": "Three questions shaped our experiment.",
+    "subtitle": "We moved from the source examples to a census classifier, a compact language model and collaborative editing.",
+    "kind": "questions",
+    "steps": [
+      "Question 1 · classification",
+      "Question 2 · language",
+      "Question 3 · collaboration"
+    ],
+    "insights": [
+      "RQ1 · Can edits to a lesioned income classifier improve its class-balanced accuracy?",
+      "RQ2 · Can bounded edits improve a pretrained language model’s answer selection?",
+      "RQ3 · How does feedback-informed collaboration compare with independent editing?"
+    ],
+    "seconds": 88,
+    "rq": "",
+    "morph": "three"
+  },
+  {
+    "key": "setup",
+    "chapter": "OUR STUDY · DESIGN",
+    "title": "Two targets. Four selected models.",
+    "subtitle": "Each editor starts from the same target. The joint session also receives the independent development histories.",
+    "kind": "setup",
+    "steps": [
+      "Start with the two targets",
+      "Run independent editing",
+      "Add the joint session",
+      "Compare the selected models"
+    ],
+    "insights": [
+      "Census classifier: trained here, then lesioned. SmolLM2-1.7B: pretrained and intact.",
+      "GPT-6.1 Sol and GPT-6 Astra independently inspect, propose and evaluate patches.",
+      "The two models alternate proposal and review across five shared rounds.",
+      "Starting model · Sol selection · Astra selection · joint selection."
+    ],
+    "seconds": 73,
+    "rq": "",
+    "morph": "network"
+  },
+  {
+    "key": "dataset",
+    "chapter": "RQ1 · CENSUS CLASSIFICATION",
+    "title": "A table of people and an income label.",
+    "subtitle": "UCI Adult / Census Income predicts annual income above or at most $50,000.",
+    "kind": "dataset",
+    "steps": [
+      "Open the feature columns",
+      "Read one illustrative record",
+      "Reveal the target label"
+    ],
+    "insights": [
+      "48,842 records and 14 original feature fields.",
+      "Age, education, occupation and weekly hours describe one record.",
+      "The label is income above $50,000 or income at most $50,000."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "matrix"
+  },
+  {
+    "key": "split",
+    "chapter": "RQ1 · PREPARATION",
+    "title": "We trained the network, then opened an editing stage.",
+    "subtitle": "Each part of the data served a specific step in the experiment.",
+    "kind": "split",
+    "steps": [
+      "Separate training and final test",
+      "Build the initial classifier",
+      "Prepare editing feedback"
+    ],
+    "insights": [
+      "32,561 original training records; 16,281 original test records.",
+      "22,792 fit records trained a 104 → 32 → 16 → 1 network with Adam.",
+      "The remaining training data supplied lesion calibration, diagnostics and candidate feedback."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "ribbon"
+  },
+  {
+    "key": "compute",
+    "chapter": "RQ1 · A LIVE CALCULATION",
+    "title": "A weight multiplies a signal.",
+    "subtitle": "Follow a worked numerical example from two inputs to an income-class decision.",
+    "kind": "compute",
+    "steps": [
+      "Multiply the two inputs",
+      "Add the contributions",
+      "Convert the output to probability",
+      "Change the first weight"
+    ],
+    "insights": [
+      "Each incoming signal contributes its input value multiplied by its connection weight.",
+      "The contributions and the bias combine into the neuron’s pre-activation.",
+      "ReLU passes the positive value onward; the output layer produces a probability.",
+      "Change the weight below: every dependent value and the decision update together."
+    ],
+    "seconds": 117,
+    "rq": "RQ1",
+    "morph": "network"
+  },
+  {
+    "key": "lesion",
+    "chapter": "RQ1 · THE STARTING MODEL",
+    "title": "We set 16 connection columns to zero.",
+    "subtitle": "The editing task works on the remaining entries of the second-layer matrix.",
+    "kind": "lesion",
+    "steps": [
+      "Open the second layer",
+      "Apply the permanent mask",
+      "Inspect the editing region"
+    ],
+    "insights": [
+      "The matrix contains 16 destination neurons × 32 incoming connections.",
+      "Sixteen input columns are held at zero throughout editing.",
+      "The editor sees the remaining learned coefficients and proposes changes to them."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "matrix"
+  },
+  {
+    "key": "adult-prompt",
+    "chapter": "RQ1 · THE EDITOR’S BRIEF",
+    "title": "Here is what we asked the GPT models to do.",
+    "subtitle": "A common instruction defines the goal, the information available and the editing actions.",
+    "kind": "adultPrompt",
+    "steps": [
+      "Read the objective",
+      "Inspect the inputs and tools",
+      "Follow a proposal to its score"
+    ],
+    "insights": [
+      "Objective: maximize development balanced accuracy on the income-classification task.",
+      "Inputs: architecture, weight statistics and a fixed diagnostic panel.",
+      "Actions inspect the network, evaluate a complete patch and submit a selected candidate."
+    ],
+    "seconds": 102,
+    "rq": "RQ1",
+    "morph": "three"
+  },
+  {
+    "key": "edit-tools",
+    "chapter": "RQ1 · THE TWO OPERATIONS",
+    "title": "Add to a few entries. Or scale a column.",
+    "subtitle": "These two simple operations define the weight changes available to the editors.",
+    "kind": "operations",
+    "steps": [
+      "Add a scalar correction",
+      "Scale selected columns",
+      "Measure the complete candidate"
+    ],
+    "insights": [
+      "A sparse addition changes explicitly named matrix entries.",
+      "Column scaling multiplies all entries of selected columns by a factor.",
+      "The evaluator applies the candidate to the starting weights and returns its development score."
+    ],
+    "seconds": 73,
+    "rq": "RQ1",
+    "morph": "matrix"
+  },
+  {
+    "key": "sol",
+    "chapter": "RQ1 · GPT-6.1 SOL",
+    "title": "Sol selected sixteen different additions.",
+    "subtitle": "The stored patch changes row 0 of the second-layer weight matrix.",
+    "kind": "sol",
+    "steps": [
+      "Open the selected connections",
+      "Apply the saved additions",
+      "See the resulting coefficients"
+    ],
+    "insights": [
+      "All sixteen entries feed the same destination neuron.",
+      "The selected additions have different magnitudes, including +0.0315, +0.0518 and +0.0280.",
+      "The same patch is then applied across every record in the final evaluation."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "matrix"
+  },
+  {
+    "key": "astra",
+    "chapter": "RQ1 · GPT-6 ASTRA",
+    "title": "Astra selected +0.003 on each of sixteen entries.",
+    "subtitle": "Its recorded search compared several step sizes on the development panel.",
+    "kind": "astra",
+    "steps": [
+      "Read the candidate trajectory",
+      "Compare the final tie",
+      "Select the smaller addition"
+    ],
+    "insights": [
+      "The search tried positive, negative and smaller positive additions.",
+      "Both +0.005 and +0.003 reached the same best recorded development balanced accuracy.",
+      "The selection rule chose the smaller +0.003 change."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "bars"
+  },
+  {
+    "key": "joint",
+    "chapter": "RQ3 · COLLABORATIVE EDITING",
+    "title": "Proposal → review → measurement → next round.",
+    "subtitle": "The joint session uses both independent histories and alternates the two GPT roles.",
+    "kind": "joint",
+    "steps": [
+      "Bring in prior development history",
+      "Propose and review a patch",
+      "Return measured feedback",
+      "Inspect the selected joint patch"
+    ],
+    "insights": [
+      "The history contains previous patches and their development scores.",
+      "GPT-6.1 Sol and GPT-6 Astra alternate proposer and reviewer.",
+      "One reviewed patch is measured per round; its score becomes shared feedback.",
+      "The selected Adult joint delta equals 0.93 × Sol’s selected delta at all sixteen entries."
+    ],
+    "seconds": 146,
+    "rq": "RQ3",
+    "morph": "three"
+  },
+  {
+    "key": "connection",
+    "chapter": "RQ1 · THE SAME CONNECTION",
+    "title": "One stored coefficient, three edits.",
+    "subtitle": "Compare the selected values for connection [0, 15], then multiply by the same activation.",
+    "kind": "connection",
+    "steps": [
+      "Starting coefficient",
+      "Astra’s chosen value",
+      "Sol’s chosen value",
+      "Joint’s chosen value"
+    ],
+    "insights": [
+      "The original coefficient is approximately 0.12482.",
+      "Astra adds 0.003 to this entry.",
+      "Sol adds 0.028 to this entry.",
+      "The joint patch adds 0.02604: 93% of Sol’s addition."
+    ],
+    "seconds": 73,
+    "rq": "RQ1",
+    "morph": "network"
+  },
+  {
+    "key": "decisions",
+    "chapter": "RQ1 · TWO RECORDED EXAMPLES",
+    "title": "A small probability shift can cross the decision threshold.",
+    "subtitle": "These are saved predictions for two held-out records.",
+    "kind": "decisions",
+    "steps": [
+      "Read the starting probabilities",
+      "Apply the selected Sol patch",
+      "Compare with the true classes"
+    ],
+    "insights": [
+      "Both starting probabilities lie just below the 0.5 decision threshold.",
+      "The edited probabilities rise to 0.50948 and 0.50781.",
+      "One decision becomes correct; the other becomes incorrect."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "ribbon"
+  },
+  {
+    "key": "changes",
+    "chapter": "RQ1 · ALL CHANGED DECISIONS",
+    "title": "65 recovered decisions. 102 newly incorrect decisions.",
+    "subtitle": "For Sol’s selected patch, the changes occur in different income classes.",
+    "kind": "changes",
+    "steps": [
+      "Count the recovered decisions",
+      "Count the newly incorrect decisions",
+      "Keep the class sizes visible"
+    ],
+    "insights": [
+      "65 higher-income records move from incorrect to correct.",
+      "102 lower-income records move from correct to incorrect.",
+      "The test set contains 3,846 higher-income and 12,435 lower-income records."
+    ],
+    "seconds": 73,
+    "rq": "RQ1",
+    "morph": "matrix"
+  },
+  {
+    "key": "metrics",
+    "chapter": "RQ1 · UNDERSTANDING THE RESULT",
+    "title": "The two accuracy metrics weight records differently.",
+    "subtitle": "Ordinary accuracy counts records equally. Balanced accuracy averages the two class recalls.",
+    "kind": "metrics",
+    "steps": [
+      "Calculate ordinary accuracy change",
+      "Calculate the change per class",
+      "Average the two class changes"
+    ],
+    "insights": [
+      "The net change is 65 − 102 = −37 correct records.",
+      "The higher-income and lower-income class rates change by different amounts.",
+      "Their equally weighted average gives +0.4349 percentage points of balanced accuracy."
+    ],
+    "seconds": 117,
+    "rq": "RQ1",
+    "morph": "bars"
+  },
+  {
+    "key": "adult-result",
+    "chapter": "RQ1 · ANSWER",
+    "title": "The class-balanced score increased.",
+    "subtitle": "Held-out evaluation of the four selected models · 16,281 records.",
+    "kind": "adultResult",
+    "steps": [
+      "Compare balanced accuracy",
+      "Read the paired intervals",
+      "Compare the other metrics"
+    ],
+    "insights": [
+      "Sol: +0.4349 pp. Joint: +0.3810 pp. Astra: approximately unchanged.",
+      "The paired intervals quantify example uncertainty for these selected models.",
+      "Ordinary accuracy and probability quality moved in the opposite direction for Sol and joint."
+    ],
+    "seconds": 88,
+    "rq": "RQ1",
+    "morph": "bars"
+  },
+  {
+    "key": "joint-result",
+    "chapter": "RQ3 · ANSWER",
+    "title": "The joint selection finished close to Sol.",
+    "subtitle": "The endpoint comparison links the cooperative outcome to the independent benchmark.",
+    "kind": "jointResult",
+    "steps": [
+      "Compare the two selections",
+      "Read their direct difference",
+      "Interpret the measured scope"
+    ],
+    "insights": [
+      "Sol: 79.0207% balanced accuracy. Joint: 78.9668%.",
+      "Joint − Sol: −0.0539 pp; paired 95% interval −0.1260 to +0.0062 pp.",
+      "This seed compares ten-slot solo searches with five joint rounds using earlier feedback."
+    ],
+    "seconds": 73,
+    "rq": "RQ3",
+    "morph": "bars"
+  },
+  {
+    "key": "lm",
+    "chapter": "RQ2 · A PRETRAINED LANGUAGE MODEL",
+    "title": "The second target answers multiple-choice questions.",
+    "subtitle": "SmolLM2-1.7B starts from its pretrained weights.",
+    "kind": "lm",
+    "steps": [
+      "Meet the 1.7B-parameter model",
+      "Open the two task families",
+      "Follow answer selection"
+    ],
+    "insights": [
+      "ARC-Easy tests school-science questions; PIQA tests physical commonsense.",
+      "Each candidate answer is scored as a continuation of the question.",
+      "The selected answer is determined by the benchmark’s likelihood-scoring rule."
+    ],
+    "seconds": 88,
+    "rq": "RQ2",
+    "morph": "stack"
+  },
+  {
+    "key": "lm-prompt",
+    "chapter": "RQ2 · THE EDITOR’S BRIEF",
+    "title": "A clear objective and a bounded part of the model.",
+    "subtitle": "Both GPT editors receive the same language-model task and the same permitted operations.",
+    "kind": "lmPrompt",
+    "steps": [
+      "Read the task",
+      "Locate the editable weights",
+      "Read the feedback and selection rule"
+    ],
+    "insights": [
+      "Objective: maximize development ARC-Easy acc_norm.",
+      "Editable weights: MLP output matrices; operations: column scaling and sparse additions.",
+      "Inspect train diagnostics, propose a complete patch, read its score, then select a candidate."
+    ],
+    "seconds": 88,
+    "rq": "RQ2",
+    "morph": "stack"
+  },
+  {
+    "key": "lm-edit",
+    "chapter": "RQ2 · A SAVED CANDIDATE",
+    "title": "One proposal halved 32 output columns.",
+    "subtitle": "A recorded candidate in transformer layer 23 changes the contribution of selected MLP features.",
+    "kind": "lmEdit",
+    "steps": [
+      "Enter the MLP output matrix",
+      "Select the first 32 columns",
+      "Apply ×0.5",
+      "Read the development result"
+    ],
+    "insights": [
+      "The output matrix combines the MLP’s internal features into the layer output.",
+      "Columns 0–31 are selected by the stored operation.",
+      "65,536 actual coefficients change in this candidate.",
+      "Development acc_norm remains 75.00%, matching the starting score."
+    ],
+    "seconds": 102,
+    "rq": "RQ2",
+    "morph": "matrix"
+  },
+  {
+    "key": "scoring",
+    "chapter": "RQ2 · HOW THE SCORE IS COMPUTED",
+    "title": "Each answer receives a likelihood score.",
+    "subtitle": "A worked example shows the same scoring rule used by the benchmark.",
+    "kind": "scoring",
+    "steps": [
+      "Score candidate continuations",
+      "Normalize by answer-text length",
+      "Select and check an answer"
+    ],
+    "insights": [
+      "The model supplies a continuation log-likelihood for each answer.",
+      "acc_norm divides by the answer text’s character count.",
+      "The highest normalized score selects the answer; comparison with the key gives correctness."
+    ],
+    "seconds": 88,
+    "rq": "RQ2",
+    "morph": "bars"
+  },
+  {
+    "key": "lm-result",
+    "chapter": "RQ2 · ANSWER",
+    "title": "The search selected the original weights.",
+    "subtitle": "Five candidate attempts per independent editor; five joint attempts.",
+    "kind": "lmResult",
+    "steps": [
+      "Compare the development trajectories",
+      "Resolve ties with change size",
+      "Evaluate the selected state"
+    ],
+    "insights": [
+      "The best development score remains 75.00%.",
+      "The original model has the smallest change size among tied candidates.",
+      "The single selected weight state scores 73.44% on ARC-Easy and 78.52% on PIQA."
+    ],
+    "seconds": 102,
+    "rq": "RQ2",
+    "morph": "orbit"
+  },
+  {
+    "key": "answers",
+    "chapter": "THE FINDINGS",
+    "title": "Three questions. Three measured answers.",
+    "subtitle": "The experiment connects proposed edits to actual weights, decisions and outcomes.",
+    "kind": "answers",
+    "steps": [
+      "Answer the classifier question",
+      "Answer the language-model question",
+      "Answer the collaboration question"
+    ],
+    "insights": [
+      "RQ1 · Direct edits improved class-balanced accuracy while shifting the distribution of errors.",
+      "RQ2 · Bounded search selected SmolLM2’s original state on these tasks.",
+      "RQ3 · The joint endpoint stayed close to the strongest independent endpoint."
+    ],
+    "seconds": 88,
+    "rq": "",
+    "morph": "three"
+  },
+  {
+    "key": "future",
+    "chapter": "FUTURE DIRECTIONS",
+    "title": "Make the next intervention more informative.",
+    "subtitle": "Use what this experiment revealed to choose the next experiments.",
+    "kind": "future",
+    "steps": [
+      "Target mechanisms",
+      "Optimize the decision tradeoff",
+      "Measure the value of collaboration"
+    ],
+    "insights": [
+      "Use activation-guided directions and richer candidate spaces to target specific behavior.",
+      "Evaluate class-balanced gains alongside error costs and probability quality.",
+      "Compare equal-budget histories and multiple independent sessions to isolate collaboration effects."
+    ],
+    "seconds": 82,
+    "rq": "",
+    "morph": "orbit"
+  }
+]

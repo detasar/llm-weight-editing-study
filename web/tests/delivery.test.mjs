@@ -34,7 +34,8 @@ test('actual publication files bind their sizes and hashes, including the single
   assert.equal(manifest.event, 'BBVA AI Innovation');
   assert.equal(manifest.duration_seconds, 2700);
   assert.equal(manifest.report_pages, 26);
-  assert.equal(manifest.chapters, 33);
+  assert.equal(manifest.chapters, 30);
+  assert.equal(manifest.presentation_backup_pages, 30);
   // A corrupt copy must fail closed rather than silently publish stale bytes.
   const temp = await mkdtemp(path.join(tmpdir(), 'delivery-binding-'));
   try {
@@ -105,7 +106,7 @@ test('both HTML editions have no external runtime dependencies or private materi
     const markup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
     for (const [, src] of markup.matchAll(/<(?:img|iframe|video|audio|source)\b[^>]*\bsrc=["']([^"']+)["']/gi)) assert.ok(src.startsWith('data:'), `${name}: ${src.slice(0,80)}`);
     for (const [, src] of markup.matchAll(/url\(["']?([^)'"\s]+)/gi)) assert.ok(src.startsWith('data:') || src.startsWith('#'), `${name}: ${src.slice(0,80)}`);
-    assert.match(html, /Davut Emre Taşar/);
+    assert.match(html, /BBVA AI Innovation/);
   }
 });
 

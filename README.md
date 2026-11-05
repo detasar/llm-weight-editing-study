@@ -72,12 +72,18 @@ original v2 measurement completed. [Methods](docs/METHODS.md),
 [scorer](docs/SCORER.md), [versions](docs/VERSIONS.md),
 [exact prompts](prompts/v2), [configuration](configs).
 
-Download the offline ZIP, unzip it, then **double-click START_PRESENTATION.html**
-and click Start presentation. Space pauses/resumes; Left/Right moves between
-explanatory cues. No server, installation, API key or internet is needed for
-playback. The 45-minute story has 33 chapters with synchronized written
-explanation, optional reduced motion and a 2D view. The 26-page reader report
-and 59-state presentation PDF backup are included.
+Download the offline ZIP, unzip it, then **double-click START_PRESENTATION.html**.
+The final revision opens directly on scene one: **30 scenes, 98 authored states,
+and a 45-minute speaking plan**. Right/Space advances a visual event; Left goes
+back; R replays the scene; G opens the scene map; N opens Turkish narration;
+F toggles fullscreen. No server, installation, API key or internet is needed
+for playback. English slides, the Turkish speaking script, the 30-page slide
+backup and the unchanged 26-page research report are included.
+
+[Turkish speaking script — PDF](publication/2026-11-04/TURKCE_ANLATIM.pdf)
+· [Turkish HTML](publication/2026-11-04/TURKCE_ANLATIM.html)
+· [Motion preview](publication/2026-11-04/MOTION_PREVIEW.mp4)
+· [Editable presentation source](presentation/revised/README.md)
 
 Build the landing and stage the accepted publication (Node 24+):
 

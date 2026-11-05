@@ -243,3 +243,45 @@ Source artwork and excerpt credits
     "sha256": "33fdba0411b52d1504c212fcb5f901bffb54f51b4cb18f1c60d74a4f54731393"
   }
 }
+
+FINAL PRESENTATION REVISION
+Three.js r169: MIT. See vendor/THREE-LICENSE.txt.
+
+OpenAI logomark: sourced from OpenAI's openai-realtime-console repository and used
+to identify the editor models. The mark belongs to OpenAI. It does not imply endorsement.
+BBVA and BBVA AI Innovation identify the intended internal session and belong to BBVA.
+
+The source title image credits Sparks of Weight-Space Programming, Rikiya Takehi,
+Jayden Teoh, Alex Zhang and Omar Khattab. It is used as a source reference, not an
+invented title page. The source URL is in docs/SOURCES.md.
+
+Measured study values and selected coefficient exports derive from the user's
+llm-weight-editing-study publication, which labels code MIT and original report/artwork
+and derived numerical data CC BY 4.0. Upstream dataset/model rights remain with their owners.
+
+Atmospheric background artwork reuses an already generated, user-approved visual
+crop from this conversation. Numeric results and labels are drawn separately.
+No font files are included. The presentation uses fonts installed on the viewing system.
+
+
+The MIT License
+
+Copyright © 2010-2024 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
